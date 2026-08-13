@@ -43,3 +43,22 @@ select min(salary)
 as min_salary 
 from employees
 where department='IT';
+select department,sum(salary)
+as sum_salary_by_department 
+from employees 
+group by department ;
+select 
+department,
+count(*) as number_of_employees_by_department,
+AVG(salary) as average_salary_by_department ,
+max(salary) as max_salary_by_department,
+min(salary) as min_salary_by_department 
+from employees
+group by department 
+having count(*)>2;
+select
+department ,count(*) 
+from employees 
+where salary >40000 
+group by department 
+having count(*)>=2; 
