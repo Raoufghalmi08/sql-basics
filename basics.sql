@@ -22,4 +22,10 @@ select name from employees
 order by salary desc;
 select name,age from employees 
 order by salary 
-limit 2;
+limit 2; 
+select count(*)
+as number_of_employees from employees ;
+select count(*)
+as number_of_it_employees 
+from employees 
+where department='it';
