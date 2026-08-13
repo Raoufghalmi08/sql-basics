@@ -29,3 +29,17 @@ select count(*)
 as number_of_it_employees 
 from employees 
 where department='it';
+select sum(salary)
+from employees 
+where department='IT';
+select AVG(salary)
+from employees 
+where department='IT';
+select max(salary)
+as max_salary 
+from employees
+where department='IT';
+select min(salary)
+as min_salary 
+from employees
+where department='IT';
