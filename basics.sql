@@ -1,4 +1,7 @@
 
+
+
+
 CREATE TABLE employees ( 
 id integer ,
 name TEXT ,
@@ -22,13 +25,10 @@ select name from employees
 order by salary desc;
 select name,age from employees 
 order by salary 
-limit 2; 
+limit 2;
 select count(*)
 as number_of_employees from employees ;
-select count(*)
-as number_of_it_employees 
-from employees 
-where department='it';
+select count(*) as number_of_it_employees from employees where department='it';
 select sum(salary)
 from employees 
 where department='IT';
@@ -61,4 +61,23 @@ department ,count(*)
 from employees 
 where salary >40000 
 group by department 
-having count(*)>=2; 
+having count(*)>=2;
+select department ,
+AVG(salary)
+from employees 
+group by department 
+having avg(salary) > 50000
+order by avg(salary) desc;
+select name , salary ,
+case 
+when salary >=60000 then 'high'
+else 'low'
+end as salary_category
+from employees ;
+select name,age,
+case 
+when age >= 25 
+then 'old'
+else 'young'
+end as age_category 
+from employees; 
