@@ -1,7 +1,3 @@
-
-
-
-
 CREATE TABLE employees ( 
 id integer ,
 name TEXT ,
@@ -80,4 +76,45 @@ when age >= 25
 then 'old'
 else 'young'
 end as age_category 
-from employees; 
+from employees;    
+select name,department 
+from employees 
+where department NOT IN ('IT');
+select name,salary
+from employees 
+where salary between 40000 and 60000;
+select name 
+from employees 
+where name like '%a';
+select name 
+from employees
+where name like '%a%';
+select name 
+from employees 
+where salary is null;
+select name 
+from employees
+where salary is not null;
+
+create table department (
+manager text,
+department text ,
+location text 
+);
+insert into department 
+(manager ,department , location )
+values 
+('karim','it','oran'),
+('zakaria','hr','alger');
+
+
+
+
+
+
+
+
+
+
+
+
